@@ -1,0 +1,29 @@
+body {
+    background-color: bisque;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dev01 {
+    background-color: white;
+    border-radius: 10px;
+    border: 10px;
+    color: black;
+    box-shadow: 10px;
+    text-align: center;
+    
+}
+
+p {
+    text-align: center;
+}
