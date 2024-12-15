@@ -7,10 +7,34 @@ services:
     ports:
       - "53:53/upd"
 
-  web:
+  proxy:
     build:
-      context: ./web
+      context: ./prox
       dockerfile: Dockerfile
-    container_name: web_container
+    container_name: proxy_container
     ports:
       - "80:80/tcp"
+    depends_on:
+      - asa-server
+    networks:
+      - asa-networks
+
+  asa-server:
+    build:
+      context: ./asa-server
+      dockerfile: Dockerfile
+    container_name: asa-server_container
+    networks:
+      asa-networks
+  
+  asa-server2:
+    build:
+      context: ./asa-server2
+      dockerfile: Dockerfile
+    container_name: asa-server_container2
+    networks:
+      asa-networks
+
+networks:
+  asa-networks:
+    driver: bridge
