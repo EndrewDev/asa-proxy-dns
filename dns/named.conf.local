@@ -1,5 +1,8 @@
 // dns/named.conf.local
-zone "endrew.br" {
+zone "endrew.asa.br" {
     type master;
-    file "/etc/bind/db.endrew.br"; // Caminho para o arquivo de zona
+    file "/etc/bind/db.endrew asa.br"; // Caminho para o arquivo de zona
+    allow-transfer {
+	127.0.0.1;
+    };
 };

@@ -2,7 +2,7 @@
 ; BIND data file for endrew.br zone
 ;
 $TTL	604800
-@	IN	SOA	ns.endrew.br. root.endrew.br. (
+@	IN	SOA	ns.endrew.asa.br. root.endrew.asa.br. (
 			      1		; Serial
 			 604800		; Refresh
 			  86400		; Retry
@@ -13,3 +13,4 @@ $TTL	604800
 @		IN	A	192.168.0.6
 www		IN	A	192.168.0.6
 portal	IN	CNAME	www
+endrew	IN	CNAME	www
