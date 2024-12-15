@@ -15,13 +15,8 @@ a {
 }
 
 .dev01 {
-    background-color: white;
-    border-radius: 10px;
-    border: 10px;
-    color: black;
-    box-shadow: 10px;
     text-align: center;
-    
+    background-color: white;
 }
 
 p {
