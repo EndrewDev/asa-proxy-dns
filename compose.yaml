@@ -5,17 +5,18 @@ services:
       dockerfile: Dockerfile
     container_name: dns_container
     ports:
-      - "53:53/upd"
+      - "8053:53/udp"
 
   proxy:
     build:
-      context: ./prox
+      context: ./proxy
       dockerfile: Dockerfile
     container_name: proxy_container
     ports:
       - "80:80/tcp"
     depends_on:
       - asa-server
+      - asa-server2
     networks:
       - asa-networks
 
@@ -23,17 +24,17 @@ services:
     build:
       context: ./asa-server
       dockerfile: Dockerfile
-    container_name: asa-server_container
+    container_name: asa-server
     networks:
-      asa-networks
+      - asa-networks
   
   asa-server2:
     build:
       context: ./asa-server2
       dockerfile: Dockerfile
-    container_name: asa-server_container2
+    container_name: asa-server2
     networks:
-      asa-networks
+      - asa-networks
 
 networks:
   asa-networks:
