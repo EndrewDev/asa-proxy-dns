@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: dns_container
     ports:
-      - "8053:53/udp"
+      - "53:53/udp"
 
   proxy:
     build:
@@ -27,6 +27,8 @@ services:
     container_name: asa-server
     networks:
       - asa-networks
+    # ports:
+    #   - "8001:80/tcp"
   
   asa-server2:
     build:
@@ -35,6 +37,8 @@ services:
     container_name: asa-server2
     networks:
       - asa-networks
+    # ports:
+    #   - "8002:80/tcp"
 
 networks:
   asa-networks:
