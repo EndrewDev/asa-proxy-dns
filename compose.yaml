@@ -40,6 +40,19 @@ services:
     # ports:
     #   - "8002:80/tcp"
 
+  email:
+    build: 
+      context: ./email
+      dockerfile: Dockerfile
+    container_name: email
+    ports:
+      - "25:25/tcp"   # SEMP
+      - "587:587/tcp" # SMP Client
+      - "110:110/tcp" # POP3
+      - "143:143/tcp" # IMAP
+    networks:
+      - asa-networks
+
 networks:
   asa-networks:
     driver: bridge
